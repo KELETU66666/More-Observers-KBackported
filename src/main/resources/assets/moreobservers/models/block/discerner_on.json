@@ -1,0 +1,6 @@
+{
+    "parent": "moreobservers:block/discerner",
+    "textures": {
+        "bottom": "moreobservers:block/discerner/discerner_back_on"
+    }
+}

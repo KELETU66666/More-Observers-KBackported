@@ -1,0 +1,6 @@
+{
+    "parent": "moreobservers:block/surveyor",
+    "textures": {
+        "bottom": "moreobservers:block/surveyor/surveyor_back_on"
+    }
+}

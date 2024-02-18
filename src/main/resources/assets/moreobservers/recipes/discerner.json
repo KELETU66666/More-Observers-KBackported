@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "GOG",
+	" G "
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:observer"
+    },
+    "G": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "moreobservers:discerner"
+  }
+}

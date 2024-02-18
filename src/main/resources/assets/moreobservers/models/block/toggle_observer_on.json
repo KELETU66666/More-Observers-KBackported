@@ -1,0 +1,9 @@
+{
+    "parent": "moreobservers:block/toggle_observer",
+    "textures": {
+        "bottom": "moreobservers:block/toggle_observer/toggle_observer_back_on",
+        "side": "moreobservers:block/toggle_observer/toggle_observer_side_on",
+        "top": "moreobservers:block/toggle_observer/toggle_observer_top_on",
+        "front": "moreobservers:block/toggle_observer/toggle_observer_front_on"
+    }
+}
