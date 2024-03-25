@@ -1,6 +1,6 @@
 package com.stebars.moreobserversmod.blocks;
 
-import akka.japi.Pair;
+import com.stebars.moreobserversmod.utils.Pair;
 import net.minecraft.block.BlockObserver;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -87,11 +87,11 @@ public class MobserverBlock extends BlockObserver {
 
 	public Pair<EnumFacing, EnumFacing> getPerpendicularDirections(EnumFacing dir) {
 		if (dir == EnumFacing.DOWN || dir == EnumFacing.UP)
-			return new Pair<EnumFacing, EnumFacing>(EnumFacing.EAST, EnumFacing.NORTH);
+			return new Pair<>(EnumFacing.EAST, EnumFacing.NORTH);
 		else if (dir == EnumFacing.WEST || dir == EnumFacing.EAST)
-			return new Pair<EnumFacing, EnumFacing>(EnumFacing.NORTH, EnumFacing.UP);
+			return new Pair<>(EnumFacing.NORTH, EnumFacing.UP);
 		else //if (dir == EnumFacing.NORTH || dir == EnumFacing.SOUTH)
-			return new Pair<EnumFacing, EnumFacing>(EnumFacing.UP, EnumFacing.WEST);
+			return new Pair<>(EnumFacing.UP, EnumFacing.WEST);
 	}
 
 	@Override
