@@ -21,10 +21,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-@Mod(modid = MoreObserversMod.MOD_ID)
+@Mod(modid = MoreObserversMod.MOD_ID, name = MoreObserversMod.MOD_NAME)
 @Mod.EventBusSubscriber(modid = MoreObserversMod.MOD_ID)
 public class MoreObserversMod {
 	public final static String MOD_ID = "moreobservers";
+	public final static String MOD_NAME = "More Observers Kedition";
 
 	public static final Block DISCERNER_BLOCK = new DiscernerBlock().setHardness(3.0F).setRegistryName(new ResourceLocation(MOD_ID, "discerner")).setTranslationKey("discerner").setTickRandomly(true);
 	public static final Item DISCERNER_ITEM = new ItemBlockDiscerner().setCreativeTab(CreativeTabs.REDSTONE).setRegistryName(new ResourceLocation(MOD_ID, "discerner"));
