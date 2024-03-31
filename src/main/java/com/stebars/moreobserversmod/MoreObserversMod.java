@@ -7,6 +7,7 @@ import com.stebars.moreobserversmod.blocks.ToggleObserverBlock;
 import com.stebars.moreobserversmod.blocks.itemBlock.ItemBlockDiscerner;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -57,6 +58,10 @@ public class MoreObserversMod {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void modelRegistryEvent(ModelRegistryEvent event) {
+		ModelLoader.setCustomStateMapper(DISCERNER_BLOCK, new StateMap.Builder().ignore(DiscernerBlock.POWER).build());
+		ModelLoader.setCustomStateMapper(TOGGLE_OBSERVER_BLOCK, new StateMap.Builder().ignore(ToggleObserverBlock.TRIGGERED).build());
+		ModelLoader.setCustomStateMapper(SURVEYOR_BLOCK, new StateMap.Builder().ignore(SurveyorBlock.POWER).build());
+
 		ModelLoader.setCustomModelResourceLocation(DISCERNER_ITEM, 0, new ModelResourceLocation(DISCERNER_ITEM.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(TOGGLE_OBSERVER_ITEM, 0, new ModelResourceLocation(TOGGLE_OBSERVER_ITEM.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(MOBSERVER_ITEM, 0, new ModelResourceLocation(MOBSERVER_ITEM.getRegistryName(), "inventory"));

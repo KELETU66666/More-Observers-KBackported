@@ -1,94 +1,48 @@
 {
   "variants": {
-    "facing=down,powered=false,triggered=false": {
+    "facing=down,powered=false": {
       "model": "moreobservers:toggle_observer",
       "x": 90
     },
-    "facing=down,powered=true,triggered=false": {
+    "facing=down,powered=true": {
       "model": "moreobservers:toggle_observer_on",
       "x": 90
     },
-    "facing=east,powered=false,triggered=false": {
+    "facing=east,powered=false": {
        "model": "moreobservers:toggle_observer",
        "y": 90
      },
-    "facing=east,powered=true,triggered=false": {
+    "facing=east,powered=true": {
        "model": "moreobservers:toggle_observer_on",
        "y": 90
      },
-    "facing=north,powered=false,triggered=false": {
+    "facing=north,powered=false": {
        "model": "moreobservers:toggle_observer"
      },
-    "facing=north,powered=true,triggered=false": {
+    "facing=north,powered=true": {
        "model": "moreobservers:toggle_observer_on"
      },
-    "facing=south,powered=false,triggered=false": {
+    "facing=south,powered=false": {
        "model": "moreobservers:toggle_observer",
        "y": 180
      },
-    "facing=south,powered=true,triggered=false": {
+    "facing=south,powered=true": {
        "model": "moreobservers:toggle_observer_on",
        "y": 180
      },
-    "facing=up,powered=false,triggered=false": {
+    "facing=up,powered=false": {
        "model": "moreobservers:toggle_observer",
        "x": 270
      },
-    "facing=up,powered=true,triggered=false": {
+    "facing=up,powered=true": {
        "model": "moreobservers:toggle_observer_on",
        "x": 270
      },
-    "facing=west,powered=false,triggered=false": {
+    "facing=west,powered=false": {
        "model": "moreobservers:toggle_observer",
        "y": 270
      },
-    "facing=west,powered=true,triggered=false": {
-       "model": "moreobservers:toggle_observer_on",
-       "y": 270
-    },
-    "facing=down,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer",
-      "x": 90
-    },
-    "facing=down,powered=true,triggered=true": {
-      "model": "moreobservers:toggle_observer_on",
-      "x": 90
-    },
-    "facing=east,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer",
-      "y": 90
-    },
-    "facing=east,powered=true,triggered=true": {
-      "model": "moreobservers:toggle_observer_on",
-      "y": 90
-    },
-    "facing=north,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer"
-    },
-    "facing=north,powered=true,triggered=true": {
-      "model": "moreobservers:toggle_observer_on"
-    },
-    "facing=south,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer",
-      "y": 180
-    },
-    "facing=south,powered=true,triggered=true": {
-      "model": "moreobservers:toggle_observer_on",
-      "y": 180
-    },
-    "facing=up,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer",
-      "x": 270
-    },
-    "facing=up,powered=true,triggered=true": {
-      "model": "moreobservers:toggle_observer_on",
-      "x": 270
-    },
-    "facing=west,powered=false,triggered=true": {
-      "model": "moreobservers:toggle_observer",
-      "y": 270
-    },
-    "facing=west,powered=true,triggered=true": {
+    "facing=west,powered=true": {
       "model": "moreobservers:toggle_observer_on",
       "y": 270
     }

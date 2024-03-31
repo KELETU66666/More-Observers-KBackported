@@ -1,0 +1,6 @@
+{
+    "parent": "moreobservers:block/discerner",
+    "textures": {
+        "front": "moreobservers:block/discerner/discerner_front_special"
+    }
+}

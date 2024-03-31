@@ -1,3 +1,11 @@
 {
-  "parent": "moreobservers:block/discerner_on"
+  "parent": "moreobservers:block/discerner_on",
+  "overrides": [
+    {
+      "predicate": {
+        "special": 1
+      },
+      "model": "moreobservers:item/discerner_special"
+    }
+  ]
 }

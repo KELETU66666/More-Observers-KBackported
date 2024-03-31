@@ -2,6 +2,7 @@ package com.stebars.moreobserversmod.blocks;
 
 import com.stebars.moreobserversmod.utils.PropertyIntegerDetails;
 import net.minecraft.block.*;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -12,6 +13,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidBase;
 
 import javax.annotation.Nullable;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,9 +25,11 @@ public class DiscernerBlock extends BlockObserver{
 
 	public static final PropertyInteger POWER = PropertyInteger.create("power", 0, 15);
 
+	public static final PropertyBool FOOL = PropertyBool.create("fool");
+
 	protected BlockStateContainer createBlockState()
 	{
-		return new BlockStateContainer(this, FACING, POWERED, POWER);
+		return new BlockStateContainer(this, FACING, POWERED, POWER, FOOL);
 	}
 	
 	// List of properties it'll check, in order, stopping at first one that's present
@@ -48,7 +53,7 @@ public class DiscernerBlock extends BlockObserver{
 			));
 
 	public DiscernerBlock() {
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH).withProperty(POWERED, Boolean.FALSE).withProperty(POWER, 0));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH).withProperty(POWERED, Boolean.FALSE).withProperty(POWER, 0).withProperty(FOOL, false));
 	}
 
 	private int detectSignal(IBlockState state, IBlockAccess world, BlockPos pos){
@@ -86,7 +91,7 @@ public class DiscernerBlock extends BlockObserver{
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos)
 	{
-		return state.withProperty(POWER, detectSignal(state, world, pos));
+		return state.withProperty(POWER, detectSignal(state, world, pos)).withProperty(FOOL, LocalDateTime.now().getMonth() == Month.APRIL && LocalDateTime.now().getDayOfMonth() == 1);
 	}
 
 	@Override
@@ -95,14 +100,14 @@ public class DiscernerBlock extends BlockObserver{
 
 		IBlockState updatedState = state
 				.withProperty(POWERED, detectSignal(state, world, pos) > 0)
-				.withProperty(POWER, detectSignal(state, world, pos));
+				.withProperty(POWER, detectSignal(state, world, pos))
+				.withProperty(FOOL, LocalDateTime.now().getMonth() == Month.APRIL && LocalDateTime.now().getDayOfMonth() == 1);
 
 		//((TileEntityWithPowered) world.getTileEntity(pos)).setPower(outputSignal);
 		world.setBlockState(pos, updatedState, 2);
 
 		this.updateNeighborsInFront(world, pos, state);
 	}
-
 
 	@Override
 	public int getWeakPower(IBlockState state, IBlockAccess reader, BlockPos pos, EnumFacing direction) {
@@ -126,7 +131,7 @@ public class DiscernerBlock extends BlockObserver{
 	@Override
 	public void onBlockAdded(World p_220082_2_, BlockPos p_220082_3_, IBlockState p_220082_1_) {
 		if (!p_220082_2_.isRemote && p_220082_1_.getValue(POWERED) && !p_220082_2_.isUpdateScheduled(p_220082_3_, this)) {
-			IBlockState blockstate = p_220082_1_.withProperty(POWERED, Boolean.FALSE).withProperty(POWER, 0);
+			IBlockState blockstate = p_220082_1_.withProperty(POWERED, Boolean.FALSE).withProperty(POWER, 0).withProperty(FOOL, Boolean.FALSE);
 			p_220082_2_.setBlockState(p_220082_3_, blockstate, 18);
 			this.updateNeighborsInFront(p_220082_2_, p_220082_3_, blockstate);
 		}
